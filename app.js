@@ -2,23 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
         mode: 'list',
-        memos: [
-            {
-                id: 1,
-                content: 'Memo #1',
-                regDate: new Date()
-            },
-            {
-                id: 2,
-                content: 'Memo #2',
-                regDate: new Date()
-            },
-            {
-                id: 3,
-                content: 'Memo #3',
-                regDate: new Date()
-            },
-        ],
+        memos: [],
         memo: {
             id: null,
             content: null,
@@ -41,6 +25,16 @@ var app = new Vue({
             });
             this.memo.content = null;
             this.mode = "list";
+
+            localStorage.setItem('memos', JSON.stringify(this.memos));
+            //메모 저장하면서 로컬스토리지에 저장
+        }
+    },
+    //앱이 생성될때 실행
+    created: function(){
+        var memos = localStorage.getItem('memos');
+        if(memos){
+            this.memos = JSON.parse(memos);
         }
     }
 })
