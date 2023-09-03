@@ -1,11 +1,23 @@
-.app .head {
-    font-size: 1.5rem;
-    color: #fff;
-    padding: 20px;
+.head{
+    padding: 5px;
     background: #07c;
     border-bottom: 1px solid #ddd;
-    text-align: center;
     position: relative;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.listbutton{
+    position: absolute;
+    top: 18px;
+    left: 34px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 .app .body ul {
@@ -65,7 +77,11 @@
     color: #fff;
 }
 
-.remove{
+.save.edit{
+    width: 100%;
+}
+
+.remove {
     width: 45%;
     padding: 13px 15px;;
     border: 0;

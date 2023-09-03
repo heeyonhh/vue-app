@@ -28,7 +28,7 @@ var app = new Vue({
                     }
                 }
             }
-            
+
             this.mode = "list"
             localStorage.setItem('memos', JSON.stringify(this.memos));
         },
@@ -58,7 +58,7 @@ var app = new Vue({
             localStorage.setItem('memos', JSON.stringify(this.memos));
             //메모 저장하면서 로컬스토리지에 저장
         },
-        //메모 열었을때 매개변수로 id 받기
+        //메모 열었을때 매개변수로 id 받아서 수정
         open: function (id) {
             // console.log(id);
             // index 번호로 id 찾아서 memo 넣고 나가기

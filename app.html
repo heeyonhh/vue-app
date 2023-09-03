@@ -11,24 +11,24 @@
 
 <body>
     <div id="app" class="app">
-        <div class="head">Memo</div>
+        <div class="head">
+            <p class="name">Memo</p>
+            <p class="listbutton" v-if="mode !== 'list'" @click="mode = 'list'">&lt;</p>
+        </div>
         <div class="body">
             <div v-if="mode === 'list'">
                 <ul>
                     <li v-for="m in memos" @click="open(m.id)">{{ m.content }}</li>
-
                 </ul>
             </div>
             <div class="write" v-else>
-                <textarea class="textarea"
-                v-model="memo.content"
-                ></textarea>
+                <textarea class="textarea" v-model="memo.content"></textarea>
                 <div class="button_wrap">
-                    <button type="button" class="save" @click="save()">저장</button>
-                    <button type="button" class="remove" @click="remove()">삭제</button>
+                    <button type="button" class="save" @click="save()" :class="{ 'edit' : mode === 'write'}">저장</button>
+                    <button type="button" class="remove" @click="remove()" v-if="mode === 'edit'">삭제</button>
                 </div>
             </div>
-            <button type="button" class="plusbutton" v-on:click="write()" v-if="mode === 'list'">+</button>
+            <button type="button" class="plusbutton" @click="write()" v-if="mode === 'list'">+</button>
         </div>
     </div>
 
