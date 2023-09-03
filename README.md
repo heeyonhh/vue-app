@@ -1,9 +1,13 @@
 # Vue 메모앱
 
 v-mode
+
 v-if
+
 v-click @click
+
 v-model
+
 v-class :class
 
 - 메모 저장 / 수정
